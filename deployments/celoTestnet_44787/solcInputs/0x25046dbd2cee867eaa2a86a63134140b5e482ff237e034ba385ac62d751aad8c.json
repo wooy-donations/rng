@@ -54,6 +54,9 @@
     },
     "contracts/test/RNGChainlinkHarness.sol": {
       "content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity ^0.6.6;\n\nimport \"../RNGChainlink.sol\";\n\ncontract RNGChainlinkHarness is RNGChainlink {\n\n  uint256 internal _seed;\n\n  constructor(address _vrfCoordinator, address _link)\n    public\n    RNGChainlink(_vrfCoordinator, _link)\n  {\n  }\n\n  function setRequestCount(uint32 _requestCount) external {\n    requestCount = _requestCount;\n  }\n\n  function setRandomNumber(uint32 requestId, uint256 rand) external {\n    randomNumbers[requestId] = rand;\n  }\n\n  function setSeed(uint256 seed) external {\n    _seed = seed;\n  }\n\n  function _getSeed() internal override view returns (uint256 seed) {\n    return _seed;\n  }\n}"
+    },
+    "contracts/test/RNGServiceStub.sol": {
+      "content": "pragma solidity ^0.6.6;\n\nimport \"../RNGInterface.sol\";\n\ncontract RNGServiceStub is RNGInterface {\n\n  uint256 internal random;\n  address internal feeToken;\n  uint256 internal requestFee;\n\n  function getLastRequestId() external override view returns (uint32 requestId) {\n    return 1;\n  }\n\n  function setRequestFee(address _feeToken, uint256 _requestFee) external {\n    feeToken = _feeToken;\n    requestFee = _requestFee;\n  }\n\n  /// @return _feeToken\n  /// @return _requestFee\n  function getRequestFee() external override view returns (address _feeToken, uint256 _requestFee) {\n    return (feeToken, requestFee);\n  }\n\n  function setRandomNumber(uint256 _random) external {\n    random = _random;\n  }\n\n  function requestRandomNumber() external override returns (uint32, uint32) {\n    return (1, 1);\n  }\n\n  function isRequestComplete(uint32) external override view returns (bool) {\n    return true;\n  }\n\n  function randomNumber(uint32) external override returns (uint256) {\n    return random;\n  }\n}"
     }
   },
   "settings": {
