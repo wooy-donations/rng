@@ -1,12 +1,8 @@
-# PoolTogether Prize Savings Protocol - RNG Service
-
-[![Coverage Status](https://coveralls.io/repos/github/pooltogether/rng-service/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/rng-service?branch=master)
+# Wooy Prize Savings Protocol - RNG Service
 
 [![built-with openzeppelin](https://img.shields.io/badge/built%20with-OpenZeppelin-3677FF)](https://docs.openzeppelin.com/)
 
-The [PoolTogether](https://www.pooltogether.com/) Prize Savings Protocol Ethereum smart contracts.
-
-See the [documentation](https://docs.pooltogether.com/protocol/random-number-generator)
+The Wooy Prize Savings Protocol Ethereum smart contracts.
 
 # Deployments
 
