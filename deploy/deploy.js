@@ -34,7 +34,7 @@ module.exports = async (buidler) => {
   const keyHashValue = keyHash[chainId] || keyHash.default
 
   debug("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-  debug("PoolTogether RNG Service - Contract Deploy Script")
+  debug("Wooy RNG Service - Contract Deploy Script")
   debug("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 
   debug("  Deploying to Network: ", chainName(chainId))
